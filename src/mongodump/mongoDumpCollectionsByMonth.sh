@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-set -e
-source <(grep = config.ini)
+#set -e
+. ./config.sh
 month=$1
 for collection in ${collections[@]}
 do

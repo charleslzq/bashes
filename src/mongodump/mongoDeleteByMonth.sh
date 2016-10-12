@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-source <(grep = config.ini)
+. ./config.sh
 collection=$1
 month=$2
 cd ${mongo_path}
