@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-startMongo.sh &
+./startMongo.sh &
 
-startZookeeper.sh &
+./startZookeeper.sh &
 
-startKafka.sh &
+./startKafka.sh &
