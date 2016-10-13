@@ -23,9 +23,11 @@ fi
 
 logfile=${dump_log_path}"\\"${monthStr}".log"
 
-echo "Start to dump indexes: "${indexes[@]} >> ${logfile}
+time=`date "+%Y-%m-%d %H:%M:%S"`
+echo ${time}": Start to dump indexes: "${indexes[@]} >> ${logfile}
 
 for index in ${indexes[@]}
 do
     ./elasticSearchIndexDumpByMonth.sh ${index} ${monthStr} >> ${logfile}
 done
+echo ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>" >> ${logfile}

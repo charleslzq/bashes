@@ -5,9 +5,9 @@ month=$2
 time=`date "+%Y-%m-%d %H:%M:%S"`
 timestamp=`date -d "${time}" +%s`
 filepath=${dump_base_path}"\\"${collection}"\\"${month}"\\"${timestamp}
-logpath=${filepath}"\\gateway\\"${collection}".bson"
+dumpfilepath=${filepath}"\\gateway\\"${collection}".bson"
 
-echo "dumping "${collection}" in month "${month}" output:"${logpath}
+echo ${time}": dumping "${collection}" in month "${month}" output:"${dumpfilepath}
 
 cd ${mongo_path}
 ./mongodump.exe \
@@ -16,7 +16,8 @@ cd ${mongo_path}
     --collection ${collection} \
     --query {month:${month}} \
     --out ${filepath}
-if [ ! -s $logpath ]
+if [ ! -s $dumpfilepath ]
 then
+    echo ${time}": empty result, deleting "${filepath}
     rm -rf ${dump_base_path}"\\"${collection}"\\"${month}"\\"${timestamp}
 fi
