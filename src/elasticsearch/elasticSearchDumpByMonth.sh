@@ -15,13 +15,13 @@ then
 fi
 
 monthStr=$1
-dirpath=${dump_base_path}"\\"${monthStr}
+dirpath=${dump_base_path}${path_separator}${monthStr}
 if [ ! -d $dirpath ]
 then
     mkdir ${dirpath}
 fi
 
-logfile=${dump_log_path}"\\"${monthStr}".log"
+logfile=${dump_log_path}${path_separator}${monthStr}".log"
 
 time=`date "+%Y-%m-%d %H:%M:%S"`
 echo ${time}": Start to dump indexes: "${indexes[@]} >> ${logfile}

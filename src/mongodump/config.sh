@@ -10,3 +10,5 @@ mongo_path="d:\\software\\mongo\\bin"
 dump_base_path="d:\\dump\\mongo"
 log_base_path="d:\\dumplog\\mongo"
 db="gateway"
+
+path_separator="\\"

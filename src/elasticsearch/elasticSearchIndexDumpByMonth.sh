@@ -12,7 +12,7 @@ queryStr="{\"query\":{\"constant_score\":{\"filter\":{\"range\":{\"@timestamp\":
 time=`date "+%Y-%m-%d %H:%M:%S"`
 timestamp=`date -d "${time}" +%s`
 
-outputfile=${dump_base_path}"\\"${monthStr}"\\"${index}"-"${timestamp}".json"
+outputfile=${dump_base_path}${path_separator}${monthStr}${path_separator}${index}"-"${timestamp}".json"
 
 
 echo ${time}": dumping "${index}" in month "${monthStr}" output:"${outputfile}

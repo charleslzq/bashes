@@ -4,8 +4,8 @@ collection=$1
 month=$2
 time=`date "+%Y-%m-%d %H:%M:%S"`
 timestamp=`date -d "${time}" +%s`
-filepath=${dump_base_path}"\\"${collection}"\\"${month}"\\"${timestamp}
-dumpfilepath=${filepath}"\\gateway\\"${collection}".bson"
+filepath=${dump_base_path}${path_separator}${collection}${path_separator}${month}${path_separator}${timestamp}
+dumpfilepath=${filepath}${path_separator}"gateway"${path_separator}${collection}".bson"
 
 echo ${time}": dumping "${collection}" in month "${month}" output:"${dumpfilepath}
 
@@ -19,5 +19,7 @@ cd ${mongo_path}
 if [ ! -s $dumpfilepath ]
 then
     echo ${time}": empty result, deleting "${filepath}
-    rm -rf ${dump_base_path}"\\"${collection}"\\"${month}"\\"${timestamp}
+    rm -rf ${dump_base_path}${path_separator}${collection}${path_separator}${month}${path_separator}${timestamp}
+else
+    ./mongoDeleteByMonth.sh ${collection} ${month}
 fi
