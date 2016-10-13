@@ -15,15 +15,17 @@ timestamp=`date -d "${time}" +%s`
 outputfile=${dump_base_path}"\\"${monthStr}"\\"${index}"-"${timestamp}".json"
 
 
-echo "dumping "${index}" in month "${monthStr}" output:"${outputfile}
+echo ${time}"||dumping "${index}" in month "${monthStr}" output:"${outputfile}
 
 elasticdump \
     --input=${elastic_search_url}"/"${index} \
     --searchBody ${queryStr} \
     --output=${outputfile}
-#    --delete
+#    --delete \
+
 
 if [ ! -s $outputfile ]
 then
+    echo "empty file, deleting "${outputfile}
     rm -if ${outputfile}
 fi
