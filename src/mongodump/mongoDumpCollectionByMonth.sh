@@ -6,6 +6,9 @@ time=`date "+%Y-%m-%d %H:%M:%S"`
 timestamp=`date -d "${time}" +%s`
 filepath=${dump_base_path}"\\"${collection}"\\"${month}"\\"${timestamp}
 logpath=${filepath}"\\gateway\\"${collection}".bson"
+
+echo "dumping "${collection}" in month "${month}" output:"${logpath}
+
 cd ${mongo_path}
 ./mongodump.exe \
     --host ${mongo_host} \

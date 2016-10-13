@@ -14,6 +14,9 @@ timestamp=`date -d "${time}" +%s`
 
 outputfile=${dump_base_path}"\\"${monthStr}"\\"${index}"-"${timestamp}".json"
 
+
+echo "dumping "${index}" in month "${monthStr}" output:"${outputfile}
+
 elasticdump \
     --input=${elastic_search_url}"/"${index} \
     --searchBody ${queryStr} \
