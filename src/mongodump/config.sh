@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 collections=(\
     "qy-logelk-ms-log" \
     "test" \
