@@ -4,4 +4,4 @@
 
 ./startZookeeper.sh &
 
-./startKafka.sh &
+./startKafka.sh

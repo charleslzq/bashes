@@ -1,0 +1,13 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="startElasticSearch.sh" type="BashConfigurationType" factoryName="Bash">
+    <option name="INTERPRETER_OPTIONS" value="" />
+    <option name="INTERPRETER_PATH" value="D:\Program Files\Git\bin\sh.exe" />
+    <option name="WORKING_DIRECTORY" value="C:\Users\Administrator\IdeaProjects\bash\src\elasticsearch" />
+    <option name="PARENT_ENVS" value="true" />
+    <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/elasticsearch/startElasticSearch.sh" />
+    <option name="PARAMETERS" value="" />
+    <module name="bash" />
+    <envs />
+    <method />
+  </configuration>
+</component>
