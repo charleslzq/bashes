@@ -1,3 +1,6 @@
 #!/usr/bin/env bash
-cd "d:\\software\\mongo\\bin"
-./mongod.exe --dbpath "d:\\mongo\\data\\db"
+
+. ./config.sh
+
+cd ${mongo_home}
+./mongod.exe --dbpath ${mongo_dbpath}

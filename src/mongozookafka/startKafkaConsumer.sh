@@ -1,3 +1,6 @@
 #!/usr/bin/env bash
-cd "D:\\software\\kafka_2.11-0.10.0.1\\bin\\windows"
+
+. ./config.sh
+
+cd ${kafka_home}
 ./kafka-console-consumer.bat --zookeeper localhost:2181 --topic qy-logelk --from-beginning

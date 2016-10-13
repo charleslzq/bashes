@@ -1,3 +1,6 @@
 #!/usr/bin/env bash
-cd "D:\\software\\zookeeper-3.4.9\\bin"
+
+. ./config.sh
+
+cd ${zookeeper_home}
 ./zkServer.cmd
