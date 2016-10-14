@@ -2,5 +2,5 @@
 
 . ./config.sh
 
-cd ${elastic_homt}
+cd ${elastic_home}
 ./elasticsearch.bat

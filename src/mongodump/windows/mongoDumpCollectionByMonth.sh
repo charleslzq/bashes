@@ -18,8 +18,20 @@ cd ${mongo_path}
     --out ${filepath}
 if [ ! -s $dumpfilepath ]
 then
+    time=`date "+%Y-%m-%d %H:%M:%S"`
     echo ${time}": empty result, deleting "${filepath}
     rm -rf ${dump_base_path}${path_separator}${collection}${path_separator}${month}${path_separator}${timestamp}
 else
-    mongoDeleteByMonth.sh ${collection} ${month}
+    time=`date "+%Y-%m-%d %H:%M:%S"`
+    file_base=${filepath}${path_separator}${db}${path_separator}${collection}
+    dest_base=${dump_base_path}${path_separator}${db}"_"${collection}"_"${month}"_"${timestamp}
+    echo ${time}": Moving files "${file_base}" to "${dest_base}
+    mv \
+    ${file_base}".bson" \
+    ${dest_base}".bson"
+    mv \
+    ${file_base}".metadata.json" \
+    ${dest_base}".metadata.json"
+    cd ${mongodump_home}
+    ./mongoDeleteByMonth.sh ${collection} ${month}
 fi

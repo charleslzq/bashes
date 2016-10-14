@@ -20,6 +20,6 @@ echo ${time}": Start to dump collections "${collections[@]} >> ${logfile}
 
 for collection in ${collections[@]}
 do
-    mongoDumpCollectionByMonth.sh ${collection} ${month} >> ${logfile}
+    ./mongoDumpCollectionByMonth.sh ${collection} ${month} >> ${logfile}
 done
 echo ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>" >> ${logfile}
