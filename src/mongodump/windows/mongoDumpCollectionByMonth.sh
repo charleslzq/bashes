@@ -23,15 +23,16 @@ then
     rm -rf ${dump_base_path}${path_separator}${collection}${path_separator}${month}${path_separator}${timestamp}
 else
     time=`date "+%Y-%m-%d %H:%M:%S"`
-    file_base=${filepath}${path_separator}${db}${path_separator}${collection}
+    orig_base=${filepath}${path_separator}${db}${path_separator}${collection}
     dest_base=${dump_base_path}${path_separator}${db}"_"${collection}"_"${month}"_"${timestamp}
-    echo ${time}": Moving files "${file_base}" to "${dest_base}
+    echo ${time}": Moving files "${orig_base}" to "${dest_base}
     mv \
-    ${file_base}".bson" \
+    ${orig_base}".bson" \
     ${dest_base}".bson"
     mv \
-    ${file_base}".metadata.json" \
+    ${orig_base}".metadata.json" \
     ${dest_base}".metadata.json"
+    rm -rf ${dump_base_path}${path_separator}${collection}${path_separator}${month}${path_separator}${timestamp}
     cd ${mongodump_home}
     ./mongoDeleteByMonth.sh ${collection} ${month}
 fi
