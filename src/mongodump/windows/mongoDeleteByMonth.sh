@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-. ./config.sh
+. config.sh
 collection=$1
 month=$2
 time=`date "+%Y-%m-%d %H:%M:%S"`
