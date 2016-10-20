@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-. ./config.sh
+. config.sh
 
 cd ${zookeeper_home}
 ./zkServer.cmd
